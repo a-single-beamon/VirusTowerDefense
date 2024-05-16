@@ -10,7 +10,7 @@ public class DesktopLauncher {
 
 	public void runGame() {
 		final int SCREEN_WIDTH = 800;
-		final int SCREEN_HEIGHT = 640;
+		final int SCREEN_HEIGHT = 480;
 		final int SPRITE_SIZE = 64;
 		
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
@@ -18,7 +18,8 @@ public class DesktopLauncher {
 		config.setWindowedMode(SCREEN_WIDTH, SCREEN_HEIGHT);
 		config.useVsync(true);
 		config.setForegroundFPS(60);
-		new Lwjgl3Application(new MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SPRITE_SIZE), config);
+		// new Lwjgl3Application(new MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SPRITE_SIZE), config);
+		new Lwjgl3Application(new Drop(SCREEN_WIDTH, SCREEN_HEIGHT, SPRITE_SIZE), config);
 	}
 	public static void main (String[] arg) {
 		DesktopLauncher dl = new DesktopLauncher();

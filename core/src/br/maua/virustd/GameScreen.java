@@ -2,9 +2,9 @@ package br.maua.virustd;
 
 import java.util.Iterator;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -17,10 +17,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
-public class MyGame extends ApplicationAdapter {
-	private final int SCREEN_WIDTH;
-	private final int SCREEN_HEIGHT;
-	private final int SPRITE_SIZE;
+public class GameScreen implements Screen {
+	private final Drop game;
+
 	private final int SPAWN_DELAY_SECONDS = 1;
 
 	private Texture dropImage;
@@ -28,34 +27,15 @@ public class MyGame extends ApplicationAdapter {
 	private Sound dropSound;
 	private Music rainMusic;
 	private OrthographicCamera camera;
-	private SpriteBatch batch;
 	private Rectangle bucket;
-	private Vector3 touchPos;
+	private Vector3 mousePos;
 	private boolean moveBucket;
 	private Array<Rectangle> raindrops;
 	private long lastDropTime;
 
-	MyGame(int screen_width, int screen_height, int sprite_size) {
-		SCREEN_HEIGHT = screen_height;
-		SCREEN_WIDTH = screen_width;
-		SPRITE_SIZE = sprite_size;
-	}
+	public GameScreen(Drop game) {
+		this.game = game;
 
-	private void spawnRaindrop() {
-
-		Rectangle raindrop = new Rectangle();
-		raindrop.x = MathUtils.random(0, SCREEN_WIDTH - SPRITE_SIZE);
-		raindrop.y = SCREEN_WIDTH;
-		raindrop.width = SPRITE_SIZE / 2;
-		raindrop.height = SPRITE_SIZE / 2;
-
-		raindrops.add(raindrop);
-
-		lastDropTime = TimeUtils.nanoTime();
-	}
-
-	@Override
-	public void create() {
 		// load the sprites used in game
 		dropImage = new Texture(Gdx.files.internal("droplet-export.png"));
 		bucketImage = new Texture(Gdx.files.internal("bucket.png"));
@@ -70,46 +50,58 @@ public class MyGame extends ApplicationAdapter {
 
 		// camera and sprite batch
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
+		camera.setToOrtho(false, game.getScreenWidth(), game.getScreenHeight());
 
 		// creating batch
-		batch = new SpriteBatch();
+		game.batch = new SpriteBatch();
 
 		// mouse tracker
-		touchPos = new Vector3();
-		moveBucket = false;
+		mousePos = new Vector3();
+		moveBucket = true;
 
 		raindrops = new Array<Rectangle>();
 		spawnRaindrop();
 
 		bucket = new Rectangle();
-		bucket.x = SCREEN_HEIGHT / 2 - SPRITE_SIZE / 2;
+		bucket.x = game.getScreenHeight() / 2 - game.getSpriteSize() / 2;
 		bucket.y = 20;
-		bucket.width = SPRITE_SIZE;
-		bucket.height = SPRITE_SIZE;
+		bucket.width = game.getSpriteSize();
+		bucket.height = game.getSpriteSize();
+	}
+
+	private void spawnRaindrop() {
+
+		Rectangle raindrop = new Rectangle();
+		raindrop.x = MathUtils.random(0, game.getScreenWidth() - game.getSpriteSize());
+		raindrop.y = game.getScreenHeight();
+		raindrop.width = game.getSpriteSize() / 2;
+		raindrop.height = game.getSpriteSize() / 2;
+
+		raindrops.add(raindrop);
+
+		lastDropTime = TimeUtils.nanoTime();
 	}
 
 	@Override
-	public void render() {
+	public void render(float delta) {
 		ScreenUtils.clear(0, 0, 0.2f, 1);
 		camera.update();
 
-		batch.setProjectionMatrix(camera.combined);
-		batch.begin();
-		batch.draw(bucketImage, bucket.x, bucket.y);
+		game.batch.setProjectionMatrix(camera.combined);
+		game.batch.begin();
+		game.batch.draw(bucketImage, bucket.x, bucket.y);
 		for (Rectangle raindrop : raindrops) {
-			batch.draw(dropImage, raindrop.x, raindrop.y);
+			game.batch.draw(dropImage, raindrop.x, raindrop.y);
 		}
-		batch.end();
+		game.batch.end();
 
 		if (Gdx.input.isButtonJustPressed(Input.Buttons.LEFT))
 			moveBucket = !moveBucket;
 
 		if (moveBucket) {
-			touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-			camera.unproject(touchPos);
-			// bucket.x = touchPos.x - 64 / 2;
-			bucket.x = MathUtils.clamp(touchPos.x - SPRITE_SIZE, 0, SCREEN_WIDTH - SPRITE_SIZE);
+			mousePos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+			camera.unproject(mousePos);
+			bucket.x = MathUtils.clamp(mousePos.x - game.getSpriteSize() / 2, 0, game.getScreenWidth() - game.getSpriteSize());
 		}
 
 		if (TimeUtils.nanoTime() - lastDropTime > SPAWN_DELAY_SECONDS * 1000000000)
@@ -124,8 +116,6 @@ public class MyGame extends ApplicationAdapter {
 			} else if (raindrop.y < 0)
 				iter.remove();
 		}
-
-		// bucket.x = MathUtils.clamp(bucket.x, 0, 800 - 64);
 	}
 
 	@Override
@@ -134,6 +124,26 @@ public class MyGame extends ApplicationAdapter {
 		bucketImage.dispose();
 		dropSound.dispose();
 		rainMusic.dispose();
-		batch.dispose();
+	}
+
+	@Override
+	public void show() {
+		rainMusic.play();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+	}
+
+	@Override
+	public void pause() {
+	}
+
+	@Override
+	public void resume() {
+	}
+
+	@Override
+	public void hide() {
 	}
 }
