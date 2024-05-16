@@ -24,9 +24,7 @@ public class DesktopLauncher {
 		new Lwjgl3Application(new MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SPRITE_SIZE), config);
 	}
 	public static void main (String[] arg) {
-		TelaLogin telaLogin = new TelaLogin();
-		telaLogin.setVisible(true);
-		// DesktopLauncher dl = new DesktopLauncher();
-		// dl.runGame();
+		DesktopLauncher dl = new DesktopLauncher();
+		dl.runGame();
 	}
 }
