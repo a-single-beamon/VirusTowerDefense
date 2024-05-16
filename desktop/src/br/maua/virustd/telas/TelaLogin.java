@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.maua.virustd;
+package br.maua.virustd.telas;
+
 
 /**
  *
@@ -14,6 +15,7 @@ public class TelaLogin extends javax.swing.JFrame {
      * Creates new form TelaLogin
      */
     public TelaLogin() {
+        System.out.println("batata");
         initComponents();
     }
 
@@ -126,7 +128,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void OkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkButtonActionPerformed
-        var dt = new TelaMenu();
+        TelaMenu dt = new TelaMenu();
         dt.setVisible(true);
         dispose();
     }//GEN-LAST:event_OkButtonActionPerformed
@@ -136,7 +138,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelarButtonActionPerformed
 
     private void CriarLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarLoginButtonActionPerformed
-       var dt = new TelaCriarLogin();
+       TelaCriarLogin dt = new TelaCriarLogin();
        dt.setVisible(true);
        dispose();
     }//GEN-LAST:event_CriarLoginButtonActionPerformed

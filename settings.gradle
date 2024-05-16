@@ -1,1 +1,1 @@
-include 'desktop', 'core'
+include 'desktop', 'core', 'immunity_defense'

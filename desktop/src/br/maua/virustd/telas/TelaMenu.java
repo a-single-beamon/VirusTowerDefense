@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.maua.virustd;
+package br.maua.virustd.telas;
+
 
 /**
  *
@@ -107,13 +108,13 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_SairButtonActionPerformed
 
     private void ConfiguracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguracoesButtonActionPerformed
-        var dt = new TelaConfiguracoes();
+        TelaConfiguracoes dt = new TelaConfiguracoes();
         dt.setVisible(true);
         dispose();
     }//GEN-LAST:event_ConfiguracoesButtonActionPerformed
 
     private void RankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RankingButtonActionPerformed
-        var dt = new TelaRanking();
+        TelaRanking dt = new TelaRanking();
         dt.setVisible(true);
         dispose();
     }//GEN-LAST:event_RankingButtonActionPerformed

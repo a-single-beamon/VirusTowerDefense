@@ -2,18 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.maua.virustd;
+package br.maua.virustd.telas;
+
 
 /**
  *
  * @author joseh
  */
-public class TelaConfiguracoes extends javax.swing.JFrame {
+public class TelaRanking extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaConfiguracoes
+     * Creates new form TelaRanking
      */
-    public TelaConfiguracoes() {
+    public TelaRanking() {
         initComponents();
     }
 
@@ -26,16 +27,19 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VoltarMenuConfigButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        VoltarMenuRankingButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(400, 200, 100, 100));
         setResizable(false);
 
-        VoltarMenuConfigButton.setText("Voltar");
-        VoltarMenuConfigButton.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Ranking");
+
+        VoltarMenuRankingButton.setText("Voltar");
+        VoltarMenuRankingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VoltarMenuConfigButtonActionPerformed(evt);
+                VoltarMenuRankingButtonActionPerformed(evt);
             }
         });
 
@@ -44,26 +48,33 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(VoltarMenuConfigButton)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(VoltarMenuRankingButton)))
+                .addContainerGap(312, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(VoltarMenuConfigButton)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addComponent(VoltarMenuRankingButton)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(230, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VoltarMenuConfigButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarMenuConfigButtonActionPerformed
-       var dt = new TelaMenu();
-       dt.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_VoltarMenuConfigButtonActionPerformed
+    private void VoltarMenuRankingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarMenuRankingButtonActionPerformed
+        TelaMenu dt = new TelaMenu();
+        dt.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VoltarMenuRankingButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,25 +93,26 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaConfiguracoes().setVisible(true);
+                new TelaRanking().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton VoltarMenuConfigButton;
+    private javax.swing.JButton VoltarMenuRankingButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
