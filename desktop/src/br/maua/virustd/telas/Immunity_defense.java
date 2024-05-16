@@ -13,6 +13,6 @@ public class Immunity_defense {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        TelaLogin tela_login = new TelaLogin();
+        // TelaLogin tela_login = new TelaLogin();
     }
 }
