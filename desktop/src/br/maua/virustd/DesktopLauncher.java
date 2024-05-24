@@ -3,6 +3,8 @@ package br.maua.virustd;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
+import br.maua.virustd.telas.TelaLogin;
+
 // import br.maua.virustd.MyGame;
 
 // Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
@@ -22,6 +24,8 @@ public class DesktopLauncher {
 		new Lwjgl3Application(new Drop(SCREEN_WIDTH, SCREEN_HEIGHT, SPRITE_SIZE), config);
 	}
 	public static void main (String[] arg) {
+		TelaLogin tLogin = new TelaLogin();
+		tLogin.setVisible(true);
 		DesktopLauncher dl = new DesktopLauncher();
 		dl.runGame();
 	}
