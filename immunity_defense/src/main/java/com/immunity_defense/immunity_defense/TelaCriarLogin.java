@@ -34,14 +34,23 @@ public class TelaCriarLogin extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane2 = new javax.swing.JTextPane();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(400, 200, 100, 100));
         setMinimumSize(new java.awt.Dimension(400, 300));
+        setPreferredSize(new java.awt.Dimension(449, 254));
+        getContentPane().setLayout(null);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("insira seu nome");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(23, 28, 160, 16);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("insira seu email");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(23, 105, 140, 16);
 
         okTelaCriarLoginButton.setText("OK");
         okTelaCriarLoginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -49,6 +58,8 @@ public class TelaCriarLogin extends javax.swing.JFrame {
                 okTelaCriarLoginButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(okTelaCriarLoginButton);
+        okTelaCriarLoginButton.setBounds(190, 200, 72, 30);
 
         cancelarTelaCriarLoginButton.setText("cancelar");
         cancelarTelaCriarLoginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,47 +67,23 @@ public class TelaCriarLogin extends javax.swing.JFrame {
                 cancelarTelaCriarLoginButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(cancelarTelaCriarLoginButton);
+        cancelarTelaCriarLoginButton.setBounds(290, 200, 100, 30);
 
         jScrollPane1.setViewportView(jTextPane1);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(30, 140, 310, 22);
+
         jScrollPane2.setViewportView(jTextPane2);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(208, Short.MAX_VALUE)
-                .addComponent(okTelaCriarLoginButton)
-                .addGap(18, 18, 18)
-                .addComponent(cancelarTelaCriarLoginButton)
-                .addGap(30, 30, 30))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(okTelaCriarLoginButton)
-                    .addComponent(cancelarTelaCriarLoginButton))
-                .addGap(14, 14, 14))
-        );
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(30, 70, 310, 22);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 530, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -151,6 +138,7 @@ public class TelaCriarLogin extends javax.swing.JFrame {
     private javax.swing.JButton cancelarTelaCriarLoginButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;

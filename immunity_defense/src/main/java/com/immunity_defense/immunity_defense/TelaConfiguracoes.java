@@ -27,10 +27,13 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     private void initComponents() {
 
         VoltarMenuConfigButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(400, 200, 100, 100));
+        setMinimumSize(new java.awt.Dimension(400, 500));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         VoltarMenuConfigButton.setText("Voltar");
         VoltarMenuConfigButton.addActionListener(new java.awt.event.ActionListener() {
@@ -38,23 +41,12 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
                 VoltarMenuConfigButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(VoltarMenuConfigButton);
+        VoltarMenuConfigButton.setBounds(14, 17, 72, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(VoltarMenuConfigButton)
-                .addContainerGap(314, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(VoltarMenuConfigButton)
-                .addContainerGap(260, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem_config_e_ranking.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 570, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,5 +94,6 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton VoltarMenuConfigButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

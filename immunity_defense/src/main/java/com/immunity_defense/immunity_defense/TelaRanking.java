@@ -26,14 +26,14 @@ public class TelaRanking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         VoltarMenuRankingButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(400, 200, 100, 100));
+        setMinimumSize(new java.awt.Dimension(460, 500));
         setResizable(false);
-
-        jLabel1.setText("Ranking");
+        getContentPane().setLayout(null);
 
         VoltarMenuRankingButton.setText("Voltar");
         VoltarMenuRankingButton.addActionListener(new java.awt.event.ActionListener() {
@@ -41,30 +41,12 @@ public class TelaRanking extends javax.swing.JFrame {
                 VoltarMenuRankingButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(VoltarMenuRankingButton);
+        VoltarMenuRankingButton.setBounds(16, 13, 72, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(VoltarMenuRankingButton)))
-                .addContainerGap(312, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(VoltarMenuRankingButton)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(230, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem_config_e_ranking.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-500, -10, 1140, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

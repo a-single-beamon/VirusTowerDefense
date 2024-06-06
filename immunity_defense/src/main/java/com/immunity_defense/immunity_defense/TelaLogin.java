@@ -34,6 +34,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("login");
@@ -41,9 +42,11 @@ public class TelaLogin extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(400, 200, 100, 100));
         setForeground(new java.awt.Color(255, 51, 102));
         setMaximumSize(new java.awt.Dimension(200, 200));
-        setMinimumSize(new java.awt.Dimension(10, 10));
+        setMinimumSize(new java.awt.Dimension(449, 254));
+        setPreferredSize(new java.awt.Dimension(490, 280));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 500));
+        getContentPane().setLayout(null);
 
         CriarLoginButton.setText("Criar login");
         CriarLoginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +54,8 @@ public class TelaLogin extends javax.swing.JFrame {
                 CriarLoginButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(CriarLoginButton);
+        CriarLoginButton.setBounds(20, 200, 90, 30);
 
         OkButton.setText("OK");
         OkButton.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +63,8 @@ public class TelaLogin extends javax.swing.JFrame {
                 OkButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(OkButton);
+        OkButton.setBounds(220, 200, 80, 30);
 
         CancelarButton.setText("Cancelar");
         CancelarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,58 +72,35 @@ public class TelaLogin extends javax.swing.JFrame {
                 CancelarButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(CancelarButton);
+        CancelarButton.setBounds(330, 200, 80, 30);
 
         jScrollPane1.setViewportView(TextPaneUsuario);
 
-        jLabel1.setText("Digite seu usuário");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(20, 50, 360, 22);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Digite seu usuário");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 20, 120, 16);
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Digite seu email");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 90, 110, 16);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(20, 120, 360, 22);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(CriarLoginButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                .addComponent(OkButton)
-                .addGap(18, 18, 18)
-                .addComponent(CancelarButton)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CriarLoginButton)
-                    .addComponent(OkButton)
-                    .addComponent(CancelarButton))
-                .addContainerGap())
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 590, 330);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,6 +167,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextPane TextPaneUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

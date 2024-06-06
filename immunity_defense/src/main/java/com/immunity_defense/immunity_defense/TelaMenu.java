@@ -30,12 +30,16 @@ public class TelaMenu extends javax.swing.JFrame {
         RankingButton = new javax.swing.JButton();
         SairButton = new javax.swing.JButton();
         JogarButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("menu");
         setBackground(new java.awt.Color(0, 0, 0));
         setBounds(new java.awt.Rectangle(350, 200, 100, 100));
+        setMinimumSize(new java.awt.Dimension(572, 306));
+        setPreferredSize(new java.awt.Dimension(572, 350));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         ConfiguracoesButton.setText("CONFIGURAÇÕES");
         ConfiguracoesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -43,6 +47,8 @@ public class TelaMenu extends javax.swing.JFrame {
                 ConfiguracoesButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(ConfiguracoesButton);
+        ConfiguracoesButton.setBounds(32, 259, 146, 33);
 
         RankingButton.setText("RANKING");
         RankingButton.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +56,8 @@ public class TelaMenu extends javax.swing.JFrame {
                 RankingButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(RankingButton);
+        RankingButton.setBounds(230, 259, 130, 33);
 
         SairButton.setText("SAIR");
         SairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +65,8 @@ public class TelaMenu extends javax.swing.JFrame {
                 SairButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(SairButton);
+        SairButton.setBounds(414, 259, 130, 33);
 
         JogarButton.setText("JOGAR");
         JogarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -64,36 +74,12 @@ public class TelaMenu extends javax.swing.JFrame {
                 JogarButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(JogarButton);
+        JogarButton.setBounds(184, 182, 211, 47);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
-                .addComponent(JogarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(ConfiguracoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(RankingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(182, Short.MAX_VALUE)
-                .addComponent(JogarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConfiguracoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RankingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem_tela_menu.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-190, 0, 840, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -158,5 +144,6 @@ public class TelaMenu extends javax.swing.JFrame {
     private javax.swing.JButton JogarButton;
     private javax.swing.JButton RankingButton;
     private javax.swing.JButton SairButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
